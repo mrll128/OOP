@@ -1,5 +1,3 @@
-// Source: https://usaco.guide/general/io
-
 #include <bits/stdc++.h>
 #include <istream>
 using namespace std;
