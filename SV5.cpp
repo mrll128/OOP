@@ -1,6 +1,5 @@
 #include <bits/stdc++.h>
 using namespace std;
- 
 class SinhVien{
 	private:
 		string ma, ten, lop, email;
@@ -24,27 +23,25 @@ class SinhVien{
 		string getlop(){
 			return lop;
 		}
+ 
 };
  
  
 int main(){
-	map<string,vector<SinhVien>> mp;
+	map<int,vector<SinhVien>> mp;
 	int n; cin >> n;
 	for(int i = 0; i < n; i++){
 		SinhVien tmp; cin >> tmp;
-		mp[tmp.getlop()].push_back(tmp);
-        //mp[lop].push_back(tmp);
+		int khoa = stoi(tmp.getlop().substr(1, 2));
+		mp[khoa].push_back(tmp);
 	}
 	int q; cin >> q;
 	while(q--){
-		string s; cin >> s;
-		cout << "DANH SACH SINH VIEN LOP " << s << ":\n";
-		for(SinhVien x : mp[s]){
+		int khoa; cin >> khoa;
+		cout << "DANH SACH SINH VIEN KHOA " << khoa << ":\n";
+		for(SinhVien x : mp[khoa % 100]){
 			cout << x;
 		}
 	}
 	return 0;
 }
- 
- 
- 
